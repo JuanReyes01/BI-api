@@ -1,5 +1,4 @@
 # Instalación de librerias
-from unidecode import unidecode
 from joblib import dump
 
 from nltk import word_tokenize, sent_tokenize
