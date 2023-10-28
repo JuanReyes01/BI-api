@@ -1,6 +1,6 @@
 # Instalación de librerias
 from joblib import dump
-
+import pandas as pd
 from nltk import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import LancasterStemmer, WordNetLemmatizer
@@ -9,6 +9,7 @@ from nltk.corpus import wordnet
 from nltk.stem import PorterStemmer
 nltk.download('wordnet')
 nltk.download('stopwords')
+nltk.download('punkt')
 
 from sklearn.model_selection import train_test_split,GridSearchCV
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer
@@ -44,6 +45,10 @@ def crearJoblib():
 
         ))
     ])
+
+    data_t = pd.read_excel('./data/cat_345.xlsx')
+    X_train, X_test, y_train, y_test = train_test_split(data_t[["Textos_espanol"]], data_t["sdg"], random_state=1, stratify=data_t['sdg'])
+    pipeline.fit(X_train, y_train)
 
     rutaPipeline =  "pipeline.joblib"
     dump(pipeline, rutaPipeline)
