@@ -1,15 +1,7 @@
 # Instalación de librerias
-import pandas as pd
-import numpy as np
-import sys
-from pandas_profiling import ProfileReport
 from unidecode import unidecode
-import pickle as pkl
 from joblib import dump
 
-import re, string, unicodedata
-import contractions
-import inflect
 from nltk import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import LancasterStemmer, WordNetLemmatizer
@@ -36,8 +28,6 @@ from sklearn.metrics import (
 from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.tree import DecisionTreeClassifier
-
-import matplotlib.pyplot as plt
 
 from Limpieza import Limpieza
 
