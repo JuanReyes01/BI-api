@@ -5,7 +5,9 @@ from fastapi.responses import JSONResponse, FileResponse
 from fastapi.templating import Jinja2Templates
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
+import crearJoblib
 
+crearJoblib.crearJoblib()
 app = FastAPI()
 
 # Load the pre-trained model
