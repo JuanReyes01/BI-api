@@ -8,6 +8,7 @@ import nltk
 from nltk.corpus import wordnet
 from nltk.stem import PorterStemmer
 nltk.download('wordnet')
+nltk.download('stopwords')
 
 
 from sklearn.model_selection import train_test_split,GridSearchCV
